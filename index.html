@@ -11,35 +11,25 @@
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
         
         body {
-            background-color: #050505; /* Deep Charcoal/Black */
+            background-color: #050505; 
             color: #ffffff;
             font-family: 'Lato', sans-serif;
         }
         
-        /* Typography Styling */
         h1, h2, h3, .serif-font {
             font-family: 'Playfair Display', serif;
         }
         
-        /* The specific 'Royal Red' from your reference images */
-        .bg-royal-red {
-            background-color: #D80000;
-        }
-        .text-royal-red {
-            color: #D80000;
-        }
-        .border-royal-red {
-            border-color: #D80000;
-        }
+        .bg-royal-red { background-color: #D80000; }
+        .text-royal-red { color: #D80000; }
+        .border-royal-red { border-color: #D80000; }
 
-        /* Bento Grid Layout Configuration */
         .bento-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
         }
         
-        /* Desktop Grid overrides */
         @media (min-width: 1024px) {
             .bento-grid {
                 grid-template-columns: repeat(12, 1fr);
@@ -47,18 +37,11 @@
             }
             .col-span-3 { grid-column: span 3; }
             .col-span-4 { grid-column: span 4; }
-            .col-span-6 { grid-column: span 6; }
-            .col-span-8 { grid-column: span 8; }
-            .row-span-2 { grid-row: span 2; }
+            .col-span-5 { grid-column: span 5; }
         }
 
-        [span_3](start_span)/* Hover Effects for emotional engagement[span_3](end_span) */
-        .hover-zoom {
-            transition: transform 0.5s ease;
-        }
-        .group:hover .hover-zoom {
-            transform: scale(1.05);
-        }
+        .hover-zoom { transition: transform 0.5s ease; }
+        .group:hover .hover-zoom { transform: scale(1.05); }
     </style>
 </head>
 <body class="antialiased">
@@ -68,15 +51,12 @@
             <div class="w-10 h-10 border border-white rounded-full flex items-center justify-center serif-font font-bold">RS</div>
             <span class="tracking-widest font-bold text-sm hidden sm:block">ROYAL SEDUCTION</span>
         </div>
-
         <div class="hidden md:flex gap-8 text-xs font-bold tracking-widest uppercase">
             <a href="#" class="hover:text-royal-red transition">Home</a>
             <a href="#" class="hover:text-royal-red transition">Categories</a>
             <a href="#" class="hover:text-royal-red transition">Lessons</a>
-            <a href="#" class="hover:text-royal-red transition">Start Here</a>
             <a href="#" class="hover:text-royal-red transition">About</a>
         </div>
-
         <div class="flex gap-6 text-sm">
             <i class="fab fa-instagram cursor-pointer hover:text-royal-red"></i>
             <i class="fas fa-search cursor-pointer hover:text-royal-red"></i>
@@ -87,34 +67,31 @@
     <main class="max-w-screen-2xl mx-auto p-4 lg:p-8 space-y-4">
         
         <div class="grid lg:grid-cols-2 gap-4 min-h-[600px]">
-            
             <div class="bg-white text-black p-8 lg:p-16 flex flex-col justify-between relative relative overflow-hidden">
                 <div>
                     <h1 class="text-6xl lg:text-8xl leading-none mb-6">
-                        SEDUCE <br>
-                        LIKE <br>
-                        <span class="serif-font italic text-royal-red">A PRO</span>
+                        SEDUCE <br> LIKE <br> <span class="serif-font italic text-royal-red">A PRO</span>
                     </h1>
                     <p class="text-royal-red font-bold uppercase tracking-wider text-sm max-w-xs leading-relaxed">
-                        [span_4](start_span)Unlock irresistible charm, magnetic presence and deep psychological connection.[span_4](end_span)
+                        Unlock irresistible charm, magnetic presence and deep psychological connection.
                     </p>
                 </div>
 
                 <div class="bg-black text-white p-6 mt-12 max-w-md shadow-2xl relative z-10">
                     <p class="text-gray-300 text-sm italic mb-3">"Silence isn't awkward. It is powerful..."</p>
                     <p class="text-xs text-gray-400 mb-4 leading-relaxed">
-                        [span_5](start_span)In this lesson, you'll discover how holding back your words can trigger curiosity, desire and even dominance.[span_5](end_span)
+                        In this lesson, you'll discover how holding back your words can trigger curiosity, desire and even dominance.
                     </p>
                     <a href="#" class="text-xs font-bold border-b border-royal-red pb-1 uppercase hover:text-royal-red transition">Read The Full Lesson</a>
                 </div>
             </div>
 
             <div class="relative bg-royal-red overflow-hidden group">
-                <img src="images/1000872504.jpg" alt="Seductive Silhouette" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80 hover-zoom">
+                <img src="Images/1.jpg" alt="Seductive Silhouette" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80 hover-zoom">
                 
                 <div class="absolute bottom-10 right-0 left-0 px-10 flex flex-col items-end gap-4 z-20">
                     <button class="bg-white text-black px-8 py-3 font-bold uppercase tracking-widest hover:bg-black hover:text-white transition shadow-lg flex items-center gap-3">
-                        [span_6](start_span)Begin Your Journey <i class="fas fa-arrow-right"></i>[span_6](end_span)
+                        Begin Your Journey <i class="fas fa-arrow-right"></i>
                     </button>
                     <a href="#" class="text-white text-sm font-bold flex items-center gap-2 hover:underline">
                         Not sure where to start? Take the Personality Quiz <i class="fas fa-chevron-right text-xs"></i>
@@ -126,14 +103,14 @@
         <div class="bento-grid">
             
             <div class="col-span-4 lg:col-span-3 h-80 relative overflow-hidden group border border-gray-800">
-                <img src="images/1000872525.jpg" alt="Art of Mystery" class="w-full h-full object-cover opacity-90 hover-zoom transition duration-700">
+                <img src="Images/2.jpg" alt="Art of Mystery" class="w-full h-full object-cover opacity-90 hover-zoom transition duration-700">
                 <div class="absolute bottom-4 left-4 font-bold tracking-widest text-sm bg-black/50 px-2 py-1 backdrop-blur-sm">THE ART OF MYSTERY</div>
             </div>
 
             <div class="col-span-4 lg:col-span-5 bg-black border border-gray-800 p-10 flex flex-col justify-center">
                 <h3 class="text-xl font-bold uppercase mb-4 text-white border-l-4 border-royal-red pl-4">About Royal Seduction</h3>
                 <p class="text-gray-400 leading-relaxed mb-4 font-light">
-                    Royal Seduction is where psychology meets passion. [span_7](start_span)We teach the art of attraction, not through tricks but through confidence, emotional intelligence and presence.[span_7](end_span)
+                    Royal Seduction is where psychology meets passion. We teach the art of attraction, not through tricks but through confidence.
                 </p>
                 <p class="text-royal-red text-sm font-bold uppercase tracking-wide">
                     Redefined with elegance, purpose and respect.
@@ -141,15 +118,13 @@
             </div>
 
             <div class="col-span-4 lg:col-span-4 bg-royal-red p-10 flex flex-col justify-center text-white relative overflow-hidden">
-                <img src="images/1000872505.jpg" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20">
-                
+                <img src="Images/4.jpg" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30">
                 <div class="relative z-10">
                     <h3 class="text-2xl font-black uppercase mb-6 border-b-2 border-white/30 pb-2 inline-block">Explore</h3>
                     <ul class="space-y-3 font-medium text-lg">
-                        <li class="flex items-center gap-3 hover:translate-x-2 transition cursor-pointer"><i class="fas fa-venus text-sm opacity-70"></i> Seduction</li>
-                        <li class="flex items-center gap-3 hover:translate-x-2 transition cursor-pointer"><i class="fas fa-brain text-sm opacity-70"></i> Psychology</li>
-                        <li class="flex items-center gap-3 hover:translate-x-2 transition cursor-pointer"><i class="fas fa-fire text-sm opacity-70"></i> Sex Education</li>
-                        <li class="flex items-center gap-3 hover:translate-x-2 transition cursor-pointer"><i class="fas fa-heart text-sm opacity-70"></i> Relationships</li>
+                        <li class="cursor-pointer hover:translate-x-2 transition"><i class="fas fa-venus text-sm opacity-70 w-6"></i> Seduction</li>
+                        <li class="cursor-pointer hover:translate-x-2 transition"><i class="fas fa-brain text-sm opacity-70 w-6"></i> Psychology</li>
+                        <li class="cursor-pointer hover:translate-x-2 transition"><i class="fas fa-fire text-sm opacity-70 w-6"></i> Sex Education</li>
                     </ul>
                 </div>
             </div>
@@ -158,25 +133,25 @@
         <div class="grid lg:grid-cols-3 gap-4 h-96">
             
             <div class="relative border border-gray-900 overflow-hidden group">
-                <img src="images/1000872519.jpg" alt="Desire Neon" class="w-full h-full object-cover hover-zoom duration-700">
+                <img src="Images/3.jpg" alt="Desire Neon" class="w-full h-full object-cover hover-zoom duration-700">
             </div>
 
-            <div class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 flex flex-col items-center justify-center text-center p-8">
-                <div class="w-16 h-16 bg-royal-red rounded-full flex items-center justify-center mb-6 text-2xl">
-                    <i class="fas fa-envelope-open-text"></i>
-                </div>
-                <h3 class="serif-font text-3xl mb-2">Private Tips</h3>
-                <p class="text-gray-400 text-sm mb-6 max-w-xs">Get seduction tips straight to your inbox. No spam. Just confidence.</p>
+            <div class="relative border border-gray-800 flex flex-col items-center justify-center text-center p-8 overflow-hidden group">
+                <img src="Images/5.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40 hover-zoom transition duration-700">
+                <div class="absolute inset-0 bg-black/60"></div>
                 
-                <form class="w-full max-w-xs flex flex-col gap-3">
-                    <input type="email" placeholder="Your email address" class="bg-gray-800 border-none p-3 text-white focus:ring-1 focus:ring-royal-red outline-none text-center placeholder-gray-500">
-                    <button class="bg-white text-black font-bold uppercase py-3 hover:bg-royal-red hover:text-white transition">Subscribe</button>
-                </form>
+                <div class="relative z-10 flex flex-col items-center w-full">
+                    <div class="w-16 h-16 bg-royal-red rounded-full flex items-center justify-center mb-6 text-2xl">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3 class="serif-font text-3xl mb-2">Private Tips</h3>
+                    <p class="text-gray-300 text-sm mb-6 max-w-xs">Get seduction tips straight to your inbox. No spam.</p>
+                    <button class="bg-white text-black font-bold uppercase py-3 px-8 hover:bg-royal-red hover:text-white transition w-full max-w-xs">Subscribe</button>
+                </div>
             </div>
 
             <div class="relative overflow-hidden border border-gray-900 group">
-                <img src="images/1000872492.jpg" alt="Sensual Close up" class="w-full h-full object-cover opacity-80 hover-zoom duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                <img src="Images/6.jpg" alt="Sensual Close up" class="w-full h-full object-cover opacity-80 hover-zoom duration-700">
                 <div class="absolute bottom-6 right-6">
                     <span class="bg-white text-black text-xs font-bold px-3 py-1 uppercase">Adults Only</span>
                 </div>
@@ -184,11 +159,10 @@
         </div>
 
     </main>
-
-    <footer class="text-center py-8 text-gray-600 text-xs uppercase tracking-widest">
-        &copy; 2025 Royal Seduction. Privacy Policy. Discretion Assured.
-    </footer>
-
-</body>
-                                                                                                               </html>
     
+    <footer class="text-center py-8 text-gray-600 text-xs uppercase tracking-widest">
+        &copy; 2025 Royal Seduction.
+    </footer>
+</body>
+    </html>
+                        
