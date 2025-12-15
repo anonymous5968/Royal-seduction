@@ -1,176 +1,161 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Royal Seduction</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --red:#c00000;
-      --dark:#0b0b0b;
-      --white:#ffffff;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:#000;
-      color:#fff;
-      font-family:'Inter',sans-serif;
-    }
-    header{
-      background:#fff;
-      color:#000;
-      padding:14px 24px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-    nav a{
-      margin:0 10px;
-      text-decoration:none;
-      color:#000;
-      font-weight:500;
-      font-size:14px;
-    }
-    .hero{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      min-height:90vh;
-    }
-    .hero-left{
-      background:#fff;
-      color:#000;
-      padding:60px 40px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-    .hero-left h1{
-      font-family:'Playfair Display',serif;
-      font-size:56px;
-      line-height:1.1;
-      margin:0 0 20px;
-    }
-    .hero-left p{
-      font-size:15px;
-      max-width:420px;
-      margin-bottom:30px;
-    }
-    .hero-left .cta{
-      display:inline-block;
-      background:#000;
-      color:#fff;
-      padding:14px 26px;
-      text-decoration:none;
-      font-weight:600;
-      width:fit-content;
-    }
-    .hero-right{
-      background:var(--red);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .hero-right img{
-      max-width:70%;
-      box-shadow:0 20px 50px rgba(0,0,0,.6);
-    }
-    section{
-      padding:70px 40px;
-    }
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      background:#000;
-    }
-    .about h2{
-      font-family:'Playfair Display',serif;
-      font-size:28px;
-      margin-bottom:20px;
-    }
-    .about p{
-      color:#ccc;
-      line-height:1.6;
-    }
-    .categories{
-      background:var(--red);
-      padding:40px;
-    }
-    .categories h3{
-      margin-top:0;
-      letter-spacing:2px;
-    }
-    .categories ul{
-      list-style:none;
-      padding:0;
-    }
-    .categories li{
-      margin:10px 0;
-    }
-    .subscribe{
-      background:#000;
-      text-align:center;
-    }
-    .subscribe input{
-      padding:12px;
-      width:240px;
-      border:none;
-    }
-    .subscribe button{
-      padding:12px 20px;
-      background:var(--red);
-      border:none;
-      color:#fff;
-      font-weight:600;
-    }
-    @media(max-width:900px){
-      .hero,.about{grid-template-columns:1fr}
-      .hero-left h1{font-size:40px}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL SEDUCTION - Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@300;400;700&display=swap');
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .theme-red {
+            background-color: #D80000; /* Deep bold red */
+        }
+        .text-theme-red {
+            color: #D80000;
+        }
+        /* Custom Grid for that "Magazine" look */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: auto auto;
+            }
+            .span-2 { grid-column: span 2; }
+            .span-1 { grid-column: span 1; }
+        }
+    </style>
 </head>
-<body><header>
-  <strong>ROYAL SEDUCTION</strong>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Categories</a>
-    <a href="#">Lessons</a>
-    <a href="#">Start Here</a>
-    <a href="#">About</a>
-  </nav>
-</header><div class="hero">
-  <div class="hero-left">
-    <h1>SEDUCE<br>LIKE A PRO</h1>
-    <p>Unlock irresistible charm, magnetic presence and deep psychological connection.</p>
-    <a class="cta" href="#">Begin your journey →</a>
-  </div>
-  <div class="hero-right">
-    <!-- PLACE THE IMAGE FILE IN THE SAME FOLDER AND NAME IT royal-seduction.jpg -->
-    <img src="royal-seduction.jpg" alt="Royal Seduction Visual">
-  </div>
-</div><section class="about">
-  <div>
-    <h2>About Royal Seduction</h2>
-    <p>
-      Royal Seduction is where psychology meets passion. We teach the art of attraction not through tricks, but through confidence, emotional intelligence and presence.
-      <br><br>
-      This is seduction redefined — with elegance, purpose and respect.
-    </p>
-  </div>
-  <div class="categories">
-    <h3>CATEGORY PREVIEW</h3>
-    <ul>
-      <li>• Seduction</li>
-      <li>• Psychology</li>
-      <li>• Sex Education</li>
-      <li>• Relationships</li>
-      <li>• Emotional Intelligence</li>
-    </ul>
-  </div>
-</section><section class="subscribe">
-  <p>Get seduction tips straight to your inbox.<br>No spam. Just confidence.</p>
-  <input type="email" placeholder="Enter your email">
-  <button>SUBSCRIBE</button>
-</section></body>
-</html>
+<body class="antialiased">
+
+    <nav class="flex justify-between items-center p-6 border-b border-gray-800 bg-white text-black">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 border-2 border-black rounded-full flex items-center justify-center font-bold serif">RS</div>
+            <span class="font-bold tracking-widest">ROYAL SEDUCTION</span>
+        </div>
+        <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-wide">
+            <a href="#" class="hover:underline">Home</a>
+            <a href="#" class="hover:underline">Categories</a>
+            <a href="#" class="hover:underline">Lessons</a>
+            <a href="#" class="hover:underline">Start Here</a>
+            <a href="#" class="hover:underline">About</a>
+        </div>
+        <div class="flex gap-4">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fas fa-search"></i>
+        </div>
+    </nav>
+
+    <header class="grid lg:grid-cols-2 min-h-[80vh]">
+        <div class="bg-white text-black p-10 flex flex-col justify-center relative">
+            <h1 class="text-6xl lg:text-8xl font-black leading-tight mb-4">
+                SEDUCE <br>
+                LIKE <br>
+                A <span class="text-theme-red serif italic">PRO</span>
+            </h1>
+            <p class="text-theme-red font-bold text-sm uppercase tracking-widest max-w-md mb-8">
+                Unlock irresistible charm, magnetic presence and deep psychological connection.
+            </p>
+            
+            <div class="bg-black text-white p-6 mt-auto text-sm leading-relaxed">
+                <p class="mb-4 text-gray-300">
+                    "Silence isn't awkward. It is powerful. In this lesson, you'll discover how holding back your words can trigger curiosity, desire, and even dominance. Learn when to pause, when to listen..."
+                </p>
+                <a href="#" class="font-bold underline decoration-theme-red underline-offset-4">READ THE FULL LESSON</a>
+            </div>
+        </div>
+
+        <div class="theme-red relative flex items-center justify-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply" alt="Couple">
+            
+            <div class="relative z-10 w-full px-10">
+                 <div class="bg-white text-black p-4 flex justify-between items-center max-w-sm ml-auto shadow-xl transform translate-y-12">
+                    <span class="font-bold">Begin your journey</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="absolute bottom-10 right-10 text-white font-bold text-sm flex items-center gap-2">
+                    <span>Not sure where to start? Take the Seduction Personality Quiz</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="p-4 bg-black">
+        <div class="bento-grid">
+            
+            <div class="span-1 h-80 relative group overflow-hidden border border-gray-800">
+                <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-80 transition hover:scale-105 duration-500">
+                <div class="absolute bottom-4 left-4 text-theme-red font-bold">THE ART OF MYSTERY</div>
+            </div>
+
+            <div class="span-1 bg-black border border-gray-800 p-8 flex flex-col justify-center">
+                <h3 class="text-white text-xl font-bold uppercase mb-4 border-l-4 border-red-600 pl-4">About Royal Seduction</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                    Royal Seduction is where psychology meets passion. We teach the art of attraction, not through tricks but through confidence, emotional intelligence and presence.
+                </p>
+                <p class="text-gray-500 text-xs italic">
+                    This is seduction - redefined with elegance, purpose and respect.
+                </p>
+            </div>
+
+            <div class="span-2 theme-red p-10 flex flex-col justify-center">
+                <h3 class="text-white text-2xl font-bold uppercase mb-6 border-b border-white/30 pb-2 inline-block">Category Preview</h3>
+                <ul class="text-white space-y-3 font-medium text-lg">
+                    <li><i class="fas fa-link opacity-50 mr-2"></i> Seduction</li>
+                    <li><i class="fas fa-brain opacity-50 mr-2"></i> Psychology</li>
+                    <li><i class="fas fa-venus-mars opacity-50 mr-2"></i> Sex Education</li>
+                    <li><i class="fas fa-user-friends opacity-50 mr-2"></i> Relationships</li>
+                    <li><i class="far fa-smile opacity-50 mr-2"></i> Emotional Intelligence</li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 h-96">
+        <div class="relative border border-gray-900">
+             <img src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-70">
+             <div class="absolute inset-0 flex items-center justify-center">
+                 <h2 class="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-red-500 to-red-900" style="-webkit-text-stroke: 1px red;">DESIRE</h2>
+             </div>
+        </div>
+
+        <div class="relative bg-red-900 border border-gray-900 flex items-center justify-center overflow-hidden">
+             <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover mix-blend-overlay opacity-50">
+             <div class="relative z-10 text-center p-6">
+                 <p class="font-bold text-xl mb-2">Get tips straight to your inbox.</p>
+                 <p class="text-sm opacity-70 mb-4">No spam. Just confidence.</p>
+                 <div class="flex">
+                     <input type="email" placeholder="Enter your email" class="bg-white text-black px-4 py-2 w-full outline-none">
+                     <button class="bg-red-600 text-white font-bold px-4 hover:bg-red-700">SUBSCRIBE</button>
+                 </div>
+             </div>
+        </div>
+
+        <div class="relative border border-gray-900">
+             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover filter contrast-125 saturate-0 hover:saturate-100 transition duration-700">
+             <div class="absolute bottom-6 right-6 bg-white rounded-xl p-3 shadow-lg">
+                 <i class="fas fa-pen-nib text-black text-xl"></i>
+             </div>
+        </div>
+    </section>
+
+</body>
+              </html>
+              
