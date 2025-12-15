@@ -3,159 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROYAL SEDUCTION - Landing Page</title>
+    <title>ROYAL SEDUCTION - Seduce Like A Pro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
         
         body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Roboto Condensed', sans-serif;
+            background-color: #050505; /* Deep Charcoal/Black */
+            color: #ffffff;
+            font-family: 'Lato', sans-serif;
         }
-        h1, h2, h3, .serif {
+        
+        /* Typography Styling */
+        h1, h2, h3, .serif-font {
             font-family: 'Playfair Display', serif;
         }
-        .theme-red {
-            background-color: #D80000; /* Deep bold red */
+        
+        /* The specific 'Royal Red' from your reference images */
+        .bg-royal-red {
+            background-color: #D80000;
         }
-        .text-theme-red {
+        .text-royal-red {
             color: #D80000;
         }
-        /* Custom Grid for that "Magazine" look */
+        .border-royal-red {
+            border-color: #D80000;
+        }
+
+        /* Bento Grid Layout Configuration */
         .bento-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
         }
+        
+        /* Desktop Grid overrides */
         @media (min-width: 1024px) {
             .bento-grid {
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: auto auto;
+                grid-template-columns: repeat(12, 1fr);
+                grid-auto-rows: minmax(100px, auto);
             }
-            .span-2 { grid-column: span 2; }
-            .span-1 { grid-column: span 1; }
+            .col-span-3 { grid-column: span 3; }
+            .col-span-4 { grid-column: span 4; }
+            .col-span-6 { grid-column: span 6; }
+            .col-span-8 { grid-column: span 8; }
+            .row-span-2 { grid-row: span 2; }
+        }
+
+        [span_3](start_span)/* Hover Effects for emotional engagement[span_3](end_span) */
+        .hover-zoom {
+            transition: transform 0.5s ease;
+        }
+        .group:hover .hover-zoom {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="flex justify-between items-center p-6 border-b border-gray-800 bg-white text-black">
-        <div class="flex items-center gap-2">
-            <div class="w-10 h-10 border-2 border-black rounded-full flex items-center justify-center font-bold serif">RS</div>
-            <span class="font-bold tracking-widest">ROYAL SEDUCTION</span>
+    <nav class="w-full flex justify-between items-center py-6 px-8 border-b border-gray-900 bg-black sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 border border-white rounded-full flex items-center justify-center serif-font font-bold">RS</div>
+            <span class="tracking-widest font-bold text-sm hidden sm:block">ROYAL SEDUCTION</span>
         </div>
-        <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-wide">
-            <a href="#" class="hover:underline">Home</a>
-            <a href="#" class="hover:underline">Categories</a>
-            <a href="#" class="hover:underline">Lessons</a>
-            <a href="#" class="hover:underline">Start Here</a>
-            <a href="#" class="hover:underline">About</a>
+
+        <div class="hidden md:flex gap-8 text-xs font-bold tracking-widest uppercase">
+            <a href="#" class="hover:text-royal-red transition">Home</a>
+            <a href="#" class="hover:text-royal-red transition">Categories</a>
+            <a href="#" class="hover:text-royal-red transition">Lessons</a>
+            <a href="#" class="hover:text-royal-red transition">Start Here</a>
+            <a href="#" class="hover:text-royal-red transition">About</a>
         </div>
-        <div class="flex gap-4">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fas fa-search"></i>
+
+        <div class="flex gap-6 text-sm">
+            <i class="fab fa-instagram cursor-pointer hover:text-royal-red"></i>
+            <i class="fas fa-search cursor-pointer hover:text-royal-red"></i>
+            <i class="fas fa-eye-slash cursor-pointer hover:text-gray-400" title="Stealth Mode"></i>
         </div>
     </nav>
 
-    <header class="grid lg:grid-cols-2 min-h-[80vh]">
-        <div class="bg-white text-black p-10 flex flex-col justify-center relative">
-            <h1 class="text-6xl lg:text-8xl font-black leading-tight mb-4">
-                SEDUCE <br>
-                LIKE <br>
-                A <span class="text-theme-red serif italic">PRO</span>
-            </h1>
-            <p class="text-theme-red font-bold text-sm uppercase tracking-widest max-w-md mb-8">
-                Unlock irresistible charm, magnetic presence and deep psychological connection.
-            </p>
+    <main class="max-w-screen-2xl mx-auto p-4 lg:p-8 space-y-4">
+        
+        <div class="grid lg:grid-cols-2 gap-4 min-h-[600px]">
             
-            <div class="bg-black text-white p-6 mt-auto text-sm leading-relaxed">
-                <p class="mb-4 text-gray-300">
-                    "Silence isn't awkward. It is powerful. In this lesson, you'll discover how holding back your words can trigger curiosity, desire, and even dominance. Learn when to pause, when to listen..."
-                </p>
-                <a href="#" class="font-bold underline decoration-theme-red underline-offset-4">READ THE FULL LESSON</a>
-            </div>
-        </div>
-
-        <div class="theme-red relative flex items-center justify-center overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply" alt="Couple">
-            
-            <div class="relative z-10 w-full px-10">
-                 <div class="bg-white text-black p-4 flex justify-between items-center max-w-sm ml-auto shadow-xl transform translate-y-12">
-                    <span class="font-bold">Begin your journey</span>
-                    <i class="fas fa-arrow-right"></i>
+            <div class="bg-white text-black p-8 lg:p-16 flex flex-col justify-between relative relative overflow-hidden">
+                <div>
+                    <h1 class="text-6xl lg:text-8xl leading-none mb-6">
+                        SEDUCE <br>
+                        LIKE <br>
+                        <span class="serif-font italic text-royal-red">A PRO</span>
+                    </h1>
+                    <p class="text-royal-red font-bold uppercase tracking-wider text-sm max-w-xs leading-relaxed">
+                        [span_4](start_span)Unlock irresistible charm, magnetic presence and deep psychological connection.[span_4](end_span)
+                    </p>
                 </div>
+
+                <div class="bg-black text-white p-6 mt-12 max-w-md shadow-2xl relative z-10">
+                    <p class="text-gray-300 text-sm italic mb-3">"Silence isn't awkward. It is powerful..."</p>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                        [span_5](start_span)In this lesson, you'll discover how holding back your words can trigger curiosity, desire and even dominance.[span_5](end_span)
+                    </p>
+                    <a href="#" class="text-xs font-bold border-b border-royal-red pb-1 uppercase hover:text-royal-red transition">Read The Full Lesson</a>
+                </div>
+            </div>
+
+            <div class="relative bg-royal-red overflow-hidden group">
+                <img src="images/1000872504.jpg" alt="Seductive Silhouette" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80 hover-zoom">
                 
-                <div class="absolute bottom-10 right-10 text-white font-bold text-sm flex items-center gap-2">
-                    <span>Not sure where to start? Take the Seduction Personality Quiz</span>
-                    <i class="fas fa-arrow-right"></i>
+                <div class="absolute bottom-10 right-0 left-0 px-10 flex flex-col items-end gap-4 z-20">
+                    <button class="bg-white text-black px-8 py-3 font-bold uppercase tracking-widest hover:bg-black hover:text-white transition shadow-lg flex items-center gap-3">
+                        [span_6](start_span)Begin Your Journey <i class="fas fa-arrow-right"></i>[span_6](end_span)
+                    </button>
+                    <a href="#" class="text-white text-sm font-bold flex items-center gap-2 hover:underline">
+                        Not sure where to start? Take the Personality Quiz <i class="fas fa-chevron-right text-xs"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </header>
 
-    <section class="p-4 bg-black">
         <div class="bento-grid">
             
-            <div class="span-1 h-80 relative group overflow-hidden border border-gray-800">
-                <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-80 transition hover:scale-105 duration-500">
-                <div class="absolute bottom-4 left-4 text-theme-red font-bold">THE ART OF MYSTERY</div>
+            <div class="col-span-4 lg:col-span-3 h-80 relative overflow-hidden group border border-gray-800">
+                <img src="images/1000872525.jpg" alt="Art of Mystery" class="w-full h-full object-cover opacity-90 hover-zoom transition duration-700">
+                <div class="absolute bottom-4 left-4 font-bold tracking-widest text-sm bg-black/50 px-2 py-1 backdrop-blur-sm">THE ART OF MYSTERY</div>
             </div>
 
-            <div class="span-1 bg-black border border-gray-800 p-8 flex flex-col justify-center">
-                <h3 class="text-white text-xl font-bold uppercase mb-4 border-l-4 border-red-600 pl-4">About Royal Seduction</h3>
-                <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                    Royal Seduction is where psychology meets passion. We teach the art of attraction, not through tricks but through confidence, emotional intelligence and presence.
+            <div class="col-span-4 lg:col-span-5 bg-black border border-gray-800 p-10 flex flex-col justify-center">
+                <h3 class="text-xl font-bold uppercase mb-4 text-white border-l-4 border-royal-red pl-4">About Royal Seduction</h3>
+                <p class="text-gray-400 leading-relaxed mb-4 font-light">
+                    Royal Seduction is where psychology meets passion. [span_7](start_span)We teach the art of attraction, not through tricks but through confidence, emotional intelligence and presence.[span_7](end_span)
                 </p>
-                <p class="text-gray-500 text-xs italic">
-                    This is seduction - redefined with elegance, purpose and respect.
+                <p class="text-royal-red text-sm font-bold uppercase tracking-wide">
+                    Redefined with elegance, purpose and respect.
                 </p>
             </div>
 
-            <div class="span-2 theme-red p-10 flex flex-col justify-center">
-                <h3 class="text-white text-2xl font-bold uppercase mb-6 border-b border-white/30 pb-2 inline-block">Category Preview</h3>
-                <ul class="text-white space-y-3 font-medium text-lg">
-                    <li><i class="fas fa-link opacity-50 mr-2"></i> Seduction</li>
-                    <li><i class="fas fa-brain opacity-50 mr-2"></i> Psychology</li>
-                    <li><i class="fas fa-venus-mars opacity-50 mr-2"></i> Sex Education</li>
-                    <li><i class="fas fa-user-friends opacity-50 mr-2"></i> Relationships</li>
-                    <li><i class="far fa-smile opacity-50 mr-2"></i> Emotional Intelligence</li>
-                </ul>
+            <div class="col-span-4 lg:col-span-4 bg-royal-red p-10 flex flex-col justify-center text-white relative overflow-hidden">
+                <img src="images/1000872505.jpg" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20">
+                
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-black uppercase mb-6 border-b-2 border-white/30 pb-2 inline-block">Explore</h3>
+                    <ul class="space-y-3 font-medium text-lg">
+                        <li class="flex items-center gap-3 hover:translate-x-2 transition cursor-pointer"><i class="fas fa-venus text-sm opacity-70"></i> Seduction</li>
+                        <li class="flex items-center gap-3 hover:translate-x-2 transition cursor-pointer"><i class="fas fa-brain text-sm opacity-70"></i> Psychology</li>
+                        <li class="flex items-center gap-3 hover:translate-x-2 transition cursor-pointer"><i class="fas fa-fire text-sm opacity-70"></i> Sex Education</li>
+                        <li class="flex items-center gap-3 hover:translate-x-2 transition cursor-pointer"><i class="fas fa-heart text-sm opacity-70"></i> Relationships</li>
+                    </ul>
+                </div>
             </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-4 h-96">
             
-        </div>
-    </section>
+            <div class="relative border border-gray-900 overflow-hidden group">
+                <img src="images/1000872519.jpg" alt="Desire Neon" class="w-full h-full object-cover hover-zoom duration-700">
+            </div>
 
-    <section class="grid grid-cols-1 md:grid-cols-3 h-96">
-        <div class="relative border border-gray-900">
-             <img src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-70">
-             <div class="absolute inset-0 flex items-center justify-center">
-                 <h2 class="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-red-500 to-red-900" style="-webkit-text-stroke: 1px red;">DESIRE</h2>
-             </div>
+            <div class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 flex flex-col items-center justify-center text-center p-8">
+                <div class="w-16 h-16 bg-royal-red rounded-full flex items-center justify-center mb-6 text-2xl">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h3 class="serif-font text-3xl mb-2">Private Tips</h3>
+                <p class="text-gray-400 text-sm mb-6 max-w-xs">Get seduction tips straight to your inbox. No spam. Just confidence.</p>
+                
+                <form class="w-full max-w-xs flex flex-col gap-3">
+                    <input type="email" placeholder="Your email address" class="bg-gray-800 border-none p-3 text-white focus:ring-1 focus:ring-royal-red outline-none text-center placeholder-gray-500">
+                    <button class="bg-white text-black font-bold uppercase py-3 hover:bg-royal-red hover:text-white transition">Subscribe</button>
+                </form>
+            </div>
+
+            <div class="relative overflow-hidden border border-gray-900 group">
+                <img src="images/1000872492.jpg" alt="Sensual Close up" class="w-full h-full object-cover opacity-80 hover-zoom duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 right-6">
+                    <span class="bg-white text-black text-xs font-bold px-3 py-1 uppercase">Adults Only</span>
+                </div>
+            </div>
         </div>
 
-        <div class="relative bg-red-900 border border-gray-900 flex items-center justify-center overflow-hidden">
-             <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover mix-blend-overlay opacity-50">
-             <div class="relative z-10 text-center p-6">
-                 <p class="font-bold text-xl mb-2">Get tips straight to your inbox.</p>
-                 <p class="text-sm opacity-70 mb-4">No spam. Just confidence.</p>
-                 <div class="flex">
-                     <input type="email" placeholder="Enter your email" class="bg-white text-black px-4 py-2 w-full outline-none">
-                     <button class="bg-red-600 text-white font-bold px-4 hover:bg-red-700">SUBSCRIBE</button>
-                 </div>
-             </div>
-        </div>
+    </main>
 
-        <div class="relative border border-gray-900">
-             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover filter contrast-125 saturate-0 hover:saturate-100 transition duration-700">
-             <div class="absolute bottom-6 right-6 bg-white rounded-xl p-3 shadow-lg">
-                 <i class="fas fa-pen-nib text-black text-xl"></i>
-             </div>
-        </div>
-    </section>
+    <footer class="text-center py-8 text-gray-600 text-xs uppercase tracking-widest">
+        &copy; 2025 Royal Seduction. Privacy Policy. Discretion Assured.
+    </footer>
 
 </body>
-              </html>
-              
+                                                                                                               </html>
+    
