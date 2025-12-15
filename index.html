@@ -24,6 +24,7 @@
         .text-royal-red { color: #D80000; }
         .border-royal-red { border-color: #D80000; }
 
+        /* Bento Grid Layout */
         .bento-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -40,7 +41,7 @@
             .col-span-5 { grid-column: span 5; }
         }
 
-        .hover-zoom { transition: transform 0.5s ease; }
+        .hover-zoom { transition: transform 0.7s ease; }
         .group:hover .hover-zoom { transform: scale(1.05); }
     </style>
 </head>
@@ -86,28 +87,25 @@
                 </div>
             </div>
 
-            <div class="relative bg-royal-red overflow-hidden group">
+            <div class="relative bg-royal-red h-[500px] lg:h-auto overflow-hidden group">
                 <img src="Images/1.jpg" alt="Seductive Silhouette" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80 hover-zoom">
                 
                 <div class="absolute bottom-10 right-0 left-0 px-10 flex flex-col items-end gap-4 z-20">
                     <button class="bg-white text-black px-8 py-3 font-bold uppercase tracking-widest hover:bg-black hover:text-white transition shadow-lg flex items-center gap-3">
                         Begin Your Journey <i class="fas fa-arrow-right"></i>
                     </button>
-                    <a href="#" class="text-white text-sm font-bold flex items-center gap-2 hover:underline">
-                        Not sure where to start? Take the Personality Quiz <i class="fas fa-chevron-right text-xs"></i>
-                    </a>
                 </div>
             </div>
         </div>
 
         <div class="bento-grid">
             
-            <div class="col-span-4 lg:col-span-3 h-80 relative overflow-hidden group border border-gray-800">
-                <img src="Images/2.jpg" alt="Art of Mystery" class="w-full h-full object-cover opacity-90 hover-zoom transition duration-700">
+            <div class="col-span-4 lg:col-span-3 h-96 relative overflow-hidden group border border-gray-800">
+                <img src="Images/2.jpg" alt="Art of Mystery" class="w-full h-full object-cover opacity-90 hover-zoom">
                 <div class="absolute bottom-4 left-4 font-bold tracking-widest text-sm bg-black/50 px-2 py-1 backdrop-blur-sm">THE ART OF MYSTERY</div>
             </div>
 
-            <div class="col-span-4 lg:col-span-5 bg-black border border-gray-800 p-10 flex flex-col justify-center">
+            <div class="col-span-4 lg:col-span-5 bg-black border border-gray-800 p-10 flex flex-col justify-center min-h-[300px]">
                 <h3 class="text-xl font-bold uppercase mb-4 text-white border-l-4 border-royal-red pl-4">About Royal Seduction</h3>
                 <p class="text-gray-400 leading-relaxed mb-4 font-light">
                     Royal Seduction is where psychology meets passion. We teach the art of attraction, not through tricks but through confidence.
@@ -117,7 +115,7 @@
                 </p>
             </div>
 
-            <div class="col-span-4 lg:col-span-4 bg-royal-red p-10 flex flex-col justify-center text-white relative overflow-hidden">
+            <div class="col-span-4 lg:col-span-4 bg-royal-red p-10 flex flex-col justify-center text-white relative overflow-hidden min-h-[300px]">
                 <img src="Images/4.jpg" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30">
                 <div class="relative z-10">
                     <h3 class="text-2xl font-black uppercase mb-6 border-b-2 border-white/30 pb-2 inline-block">Explore</h3>
@@ -130,14 +128,14 @@
             </div>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-4 h-96">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 h-auto lg:h-96">
             
-            <div class="relative border border-gray-900 overflow-hidden group">
-                <img src="Images/3.jpg" alt="Desire Neon" class="w-full h-full object-cover hover-zoom duration-700">
+            <div class="relative border border-gray-900 overflow-hidden group h-96 lg:h-full">
+                <img src="Images/3.jpg" alt="Desire Neon" class="w-full h-full object-cover hover-zoom">
             </div>
 
-            <div class="relative border border-gray-800 flex flex-col items-center justify-center text-center p-8 overflow-hidden group">
-                <img src="Images/5.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40 hover-zoom transition duration-700">
+            <div class="relative border border-gray-800 flex flex-col items-center justify-center text-center p-8 overflow-hidden group h-96 lg:h-full">
+                <img src="Images/5.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40 hover-zoom">
                 <div class="absolute inset-0 bg-black/60"></div>
                 
                 <div class="relative z-10 flex flex-col items-center w-full">
@@ -150,8 +148,8 @@
                 </div>
             </div>
 
-            <div class="relative overflow-hidden border border-gray-900 group">
-                <img src="Images/6.jpg" alt="Sensual Close up" class="w-full h-full object-cover opacity-80 hover-zoom duration-700">
+            <div class="relative overflow-hidden border border-gray-900 group h-96 lg:h-full">
+                <img src="Images/6.jpg" alt="Sensual Close up" class="w-full h-full object-cover opacity-80 hover-zoom">
                 <div class="absolute bottom-6 right-6">
                     <span class="bg-white text-black text-xs font-bold px-3 py-1 uppercase">Adults Only</span>
                 </div>
@@ -164,5 +162,5 @@
         &copy; 2025 Royal Seduction.
     </footer>
 </body>
-    </html>
-                        
+                    </html>
+                                                                                                               
