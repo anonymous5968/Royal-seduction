@@ -24,32 +24,18 @@
         .text-royal-red { color: #D80000; }
         .border-royal-red { border-color: #D80000; }
 
-        /* Bento Grid Layout */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
+        .hover-zoom { transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .group:hover .hover-zoom { transform: scale(1.08); }
         
-        @media (min-width: 1024px) {
-            .bento-grid {
-                grid-template-columns: repeat(12, 1fr);
-                grid-auto-rows: minmax(100px, auto);
-            }
-            .col-span-3 { grid-column: span 3; }
-            .col-span-4 { grid-column: span 4; }
-            .col-span-5 { grid-column: span 5; }
-        }
-
-        .hover-zoom { transition: transform 0.7s ease; }
-        .group:hover .hover-zoom { transform: scale(1.05); }
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="w-full flex justify-between items-center py-6 px-8 border-b border-gray-900 bg-black sticky top-0 z-50">
+    <nav class="w-full flex justify-between items-center py-6 px-8 border-b border-gray-900 bg-black/95 backdrop-blur-md sticky top-0 z-50">
         <div class="flex items-center gap-3">
-            <div class="w-10 h-10 border border-white rounded-full flex items-center justify-center serif-font font-bold">RS</div>
+            <div class="w-10 h-10 border border-white rounded-full flex items-center justify-center serif-font font-bold text-lg">RS</div>
             <span class="tracking-widest font-bold text-sm hidden sm:block">ROYAL SEDUCTION</span>
         </div>
         <div class="hidden md:flex gap-8 text-xs font-bold tracking-widest uppercase">
@@ -59,18 +45,20 @@
             <a href="#" class="hover:text-royal-red transition">About</a>
         </div>
         <div class="flex gap-6 text-sm">
-            <i class="fab fa-instagram cursor-pointer hover:text-royal-red"></i>
-            <i class="fas fa-search cursor-pointer hover:text-royal-red"></i>
-            <i class="fas fa-eye-slash cursor-pointer hover:text-gray-400" title="Stealth Mode"></i>
+            <i class="fab fa-instagram cursor-pointer hover:text-royal-red transition" aria-label="Instagram"></i>
+            <i class="fas fa-search cursor-pointer hover:text-royal-red transition" aria-label="Search"></i>
+            <button title="Stealth Mode" class="hover:text-gray-400 transition">
+                <i class="fas fa-eye-slash"></i>
+            </button>
         </div>
     </nav>
 
-    <main class="max-w-screen-2xl mx-auto p-4 lg:p-8 space-y-4">
+    <main class="max-w-screen-2xl mx-auto p-4 lg:p-8 space-y-6">
         
-        <div class="grid lg:grid-cols-2 gap-4 min-h-[600px]">
-            <div class="bg-white text-black p-8 lg:p-16 flex flex-col justify-between relative relative overflow-hidden">
+        <div class="grid lg:grid-cols-2 gap-4">
+            <div class="bg-white text-black p-8 lg:p-20 flex flex-col justify-between relative overflow-hidden min-h-[500px]">
                 <div>
-                    <h1 class="text-6xl lg:text-8xl leading-none mb-6">
+                    <h1 class="text-6xl lg:text-8xl leading-[0.9] mb-8">
                         SEDUCE <br> LIKE <br> <span class="serif-font italic text-royal-red">A PRO</span>
                     </h1>
                     <p class="text-royal-red font-bold uppercase tracking-wider text-sm max-w-xs leading-relaxed">
@@ -78,91 +66,104 @@
                     </p>
                 </div>
 
-                <div class="bg-black text-white p-6 mt-12 max-w-md shadow-2xl relative z-10">
-                    <p class="text-gray-300 text-sm italic mb-3">"Silence isn't awkward. It is powerful..."</p>
-                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                <div class="bg-black text-white p-8 mt-12 max-w-md shadow-2xl relative z-10 border-l-4 border-royal-red">
+                    <p class="text-gray-300 text-sm italic mb-4">"Silence isn't awkward. It is powerful..."</p>
+                    <p class="text-xs text-gray-400 mb-6 leading-relaxed">
                         In this lesson, you'll discover how holding back your words can trigger curiosity, desire and even dominance.
                     </p>
-                    <a href="#" class="text-xs font-bold border-b border-royal-red pb-1 uppercase hover:text-royal-red transition">Read The Full Lesson</a>
+                    <a href="#" class="text-xs font-bold border-b border-royal-red pb-1 uppercase hover:text-royal-red transition tracking-tighter">Read The Full Lesson</a>
                 </div>
             </div>
 
-            <div class="relative bg-royal-red h-[500px] lg:h-auto overflow-hidden group">
-                <img src="Images/1.jpg" alt="Seductive Silhouette" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80 hover-zoom">
+            <div class="relative bg-royal-red overflow-hidden group min-h-[500px]">
+                <img src="Images/1.jpg" alt="Seductive Hero" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80 hover-zoom">
                 
-                <div class="absolute bottom-10 right-0 left-0 px-10 flex flex-col items-end gap-4 z-20">
-                    <button class="bg-white text-black px-8 py-3 font-bold uppercase tracking-widest hover:bg-black hover:text-white transition shadow-lg flex items-center gap-3">
-                        Begin Your Journey <i class="fas fa-arrow-right"></i>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                
+                <div class="absolute bottom-12 right-12 z-20">
+                    <button class="bg-white text-black px-10 py-4 font-bold uppercase tracking-widest hover:bg-black hover:text-white transition shadow-2xl flex items-center gap-4">
+                        Begin Your Journey <i class="fas fa-arrow-right text-xs"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="bento-grid">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
-            <div class="col-span-4 lg:col-span-4 bg-royal-red p-10 flex flex-col justify-start text-white min-h-[400px]">
-    <div class="mb-10">
-        <h3 class="text-3xl font-black uppercase tracking-tighter inline-block border-b-4 border-white pb-1">
-            Category Preview
-        </h3>
-    </div>
-    
-    <ul class="space-y-6">
-        <li class="flex items-center gap-6 group cursor-pointer">
-            <i class="fas fa-link text-2xl opacity-80 group-hover:scale-110 transition-transform"></i>
-            <span class="text-3xl font-light tracking-wide group-hover:translate-x-2 transition-transform">Seduction</span>
-        </li>
-        <li class="flex items-center gap-6 group cursor-pointer">
-            <i class="fas fa-brain text-2xl opacity-80 group-hover:scale-110 transition-transform"></i>
-            <span class="text-3xl font-light tracking-wide group-hover:translate-x-2 transition-transform">Psychology</span>
-        </li>
-        <li class="flex items-center gap-6 group cursor-pointer">
-            <i class="fas fa-droplet text-2xl opacity-80 group-hover:scale-110 transition-transform"></i>
-            <span class="text-3xl font-light tracking-wide group-hover:translate-x-2 transition-transform">Sex Education</span>
-        </li>
-        <li class="flex items-center gap-6 group cursor-pointer">
-            <i class="fas fa-user-group text-2xl opacity-80 group-hover:scale-110 transition-transform"></i>
-            <span class="text-3xl font-light tracking-wide group-hover:translate-x-2 transition-transform">Relationships</span>
-        </li>
-        <li class="flex items-center gap-6 group cursor-pointer">
-            <i class="fas fa-face-smile text-2xl opacity-80 group-hover:scale-110 transition-transform"></i>
-            <span class="text-3xl font-light tracking-wide group-hover:translate-x-2 transition-transform">Emotional Intelligence</span>
-        </li>
-    </ul>
-</div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 h-auto lg:h-96">
-            
-            <div class="relative border border-gray-900 overflow-hidden group h-96 lg:h-full">
-                <img src="Images/3.jpg" alt="Desire Neon" class="w-full h-full object-cover hover-zoom">
+            <div class="lg:col-span-4 bg-royal-red p-10 flex flex-col justify-between text-white min-h-[500px]">
+                <div>
+                    <h3 class="text-3xl font-black uppercase tracking-tighter inline-block border-b-4 border-white pb-2 mb-10">
+                        The Masterclass
+                    </h3>
+                    <ul class="space-y-8">
+                        <li class="flex items-center gap-6 group cursor-pointer">
+                            <i class="fas fa-link text-xl opacity-70 group-hover:scale-125 group-hover:opacity-100 transition-all"></i>
+                            <span class="text-2xl font-light tracking-wide group-hover:translate-x-3 transition-transform">Seduction</span>
+                        </li>
+                        <li class="flex items-center gap-6 group cursor-pointer">
+                            <i class="fas fa-brain text-xl opacity-70 group-hover:scale-125 group-hover:opacity-100 transition-all"></i>
+                            <span class="text-2xl font-light tracking-wide group-hover:translate-x-3 transition-transform">Psychology</span>
+                        </li>
+                        <li class="flex items-center gap-6 group cursor-pointer">
+                            <i class="fas fa-droplet text-xl opacity-70 group-hover:scale-125 group-hover:opacity-100 transition-all"></i>
+                            <span class="text-2xl font-light tracking-wide group-hover:translate-x-3 transition-transform">Body Language</span>
+                        </li>
+                        <li class="flex items-center gap-6 group cursor-pointer">
+                            <i class="fas fa-user-group text-xl opacity-70 group-hover:scale-125 group-hover:opacity-100 transition-all"></i>
+                            <span class="text-2xl font-light tracking-wide group-hover:translate-x-3 transition-transform">Relationships</span>
+                        </li>
+                    </ul>
+                </div>
+                <p class="text-[10px] uppercase tracking-[0.3em] opacity-60">Curated Intelligence &copy; 2025</p>
             </div>
 
-            <div class="relative border border-gray-800 flex flex-col items-center justify-center text-center p-8 overflow-hidden group h-96 lg:h-full">
-                <img src="Images/5.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40 hover-zoom">
-                <div class="absolute inset-0 bg-black/60"></div>
+            <div class="lg:col-span-3 relative border border-gray-900 overflow-hidden group min-h-[300px]">
+                <img src="Images/3.jpg" alt="Artistic Visual" class="w-full h-full object-cover hover-zoom opacity-80">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+            </div>
+
+            <div class="lg:col-span-5 relative border border-gray-800 flex flex-col items-center justify-center text-center p-12 overflow-hidden group min-h-[300px]">
+                <img src="Images/5.jpg" alt="Newsletter Background" class="absolute inset-0 w-full h-full object-cover opacity-30 hover-zoom">
+                <div class="absolute inset-0 bg-black/70"></div>
                 
                 <div class="relative z-10 flex flex-col items-center w-full">
-                    <div class="w-16 h-16 bg-royal-red rounded-full flex items-center justify-center mb-6 text-2xl">
+                    <div class="w-14 h-14 bg-royal-red rounded-full flex items-center justify-center mb-6 text-xl shadow-lg">
                         <i class="fas fa-envelope-open-text"></i>
                     </div>
-                    <h3 class="serif-font text-3xl mb-2">Private Tips</h3>
-                    <p class="text-gray-300 text-sm mb-6 max-w-xs">Get seduction tips straight to your inbox. No spam.</p>
-                    <button class="bg-white text-black font-bold uppercase py-3 px-8 hover:bg-royal-red hover:text-white transition w-full max-w-xs">Subscribe</button>
+                    <h3 class="serif-font text-4xl mb-3">Private Tips</h3>
+                    <p class="text-gray-400 text-sm mb-8 max-w-xs leading-relaxed">Elite seduction insights delivered once a week. Strictly confidential.</p>
+                    <div class="flex w-full max-w-sm">
+                        <input type="email" placeholder="Email Address" class="bg-white/10 border border-gray-700 px-4 py-3 text-sm w-full focus:outline-none focus:border-royal-red transition">
+                        <button class="bg-white text-black font-bold uppercase py-3 px-6 hover:bg-royal-red hover:text-white transition">Join</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="relative overflow-hidden border border-gray-900 group h-96 lg:h-full">
-                <img src="Images/6.jpg" alt="Sensual Close up" class="w-full h-full object-cover opacity-80 hover-zoom">
-                <div class="absolute bottom-6 right-6">
-                    <span class="bg-white text-black text-xs font-bold px-3 py-1 uppercase">Adults Only</span>
+            <div class="lg:col-span-8 relative overflow-hidden border border-gray-900 group min-h-[250px]">
+                <img src="Images/6.jpg" alt="Adult Content" class="w-full h-full object-cover opacity-60 hover-zoom">
+                <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent"></div>
+                <div class="absolute bottom-8 left-8">
+                    <h4 class="serif-font text-2xl mb-1 italic">The Forbidden Chapter</h4>
+                    <span class="text-[10px] bg-white text-black font-black px-3 py-1 uppercase tracking-widest">Adults Only</span>
                 </div>
             </div>
+
         </div>
 
     </main>
     
-    <footer class="text-center py-8 text-gray-600 text-xs uppercase tracking-widest">
-        &copy; 2025 Royal Seduction.
+    <footer class="border-t border-gray-900 mt-12 py-12">
+        <div class="max-w-screen-2xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-600 text-[10px] uppercase tracking-[0.5em]">
+                &copy; 2025 Royal Seduction. All Rights Reserved.
+            </div>
+            <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+                <a href="#" class="hover:text-white transition">Contact</a>
+            </div>
+        </div>
     </footer>
+
 </body>
-                    </html>
-                                                                                                               
+</html>
