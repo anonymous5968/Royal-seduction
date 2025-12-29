@@ -151,24 +151,35 @@
             </div>
 
          <div class="lg:col-span-12 bg-royal-red grid grid-cols-1 md:grid-cols-2 min-h-[400px] border border-gray-900 overflow-hidden">
-    
-    <div class="flex flex-col justify-center p-8 lg:p-16">
-        <h4 class="serif-font text-4xl lg:text-5xl mb-3 italic text-white uppercase tracking-tighter">
-            The Forbidden <br> Chapter
-        </h4>
-        <div class="w-12 h-[2px] bg-white mb-4"></div> <p class="text-white/70 text-[10px] uppercase tracking-[0.3em] font-bold">
-            Exclusive Membership Required
-        </p>
-    </div>
-             </div> 
+            
+            <div class="flex flex-col justify-center p-8 lg:p-16">
+                <h4 class="serif-font text-4xl lg:text-5xl mb-3 italic text-white uppercase tracking-tighter">
+                    The Forbidden <br> Chapter
+                </h4>
+                <div class="w-12 h-[2px] bg-white mb-4"></div> 
+                <p class="text-white/70 text-[10px] uppercase tracking-[0.3em] font-bold">
+                    Exclusive Membership Required
+                </p>
+            </div>
+
+            <div class="relative w-full h-full group">
+                <img src="Images/6.jpg" alt="Adult Content" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-1000">
+                <div class="absolute top-6 right-6">
+                    <span class="text-[10px] bg-white text-black font-black px-4 py-2 uppercase tracking-widest shadow-2xl">
+                        Adults Only
+                    </span>
+                </div>
+                <div class="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black/20 to-transparent"></div>
+            </div>
+        </div>
+
+        </div> 
 
         <div class="mt-6 grid grid-cols-1 md:grid-cols-12 gap-0 border border-gray-900 overflow-hidden">
-            
             <div class="md:col-span-8 bg-black p-10 lg:p-16 flex flex-col justify-center">
                 <h2 class="text-white text-xl md:text-2xl font-bold uppercase tracking-widest border-b-2 border-white inline-block mb-8 self-start pb-1">
                     About Royal Seduction
                 </h2>
-                
                 <div class="space-y-6 max-w-2xl">
                     <p class="text-gray-300 text-sm md:text-base leading-relaxed tracking-tight">
                         Royal Seduction is where psychology meets passion. We teach the art of attraction, not through tricks but through confidence, emotional intelligence and presence.
@@ -181,39 +192,9 @@
                     </p>
                 </div>
             </div>
-
             <div class="md:col-span-4 bg-royal-red min-h-[100px] md:min-h-full"></div>
         </div>
 
-    </main> ```
-
-### Why this fixes the issue:
-1.  **Grid Isolation**: By closing the `grid-cols-12` container before the About section, the About section becomes a block-level element that naturally flows *after* the grid.
-2.  **Width Control**: Using `mt-6` (margin top) creates a clean gap between the "Forbidden Chapter" image and the new "About" box.
-3.  **Independent Layout**: The About section now has its own `grid-cols-12` internal logic, so it won't interfere with the layout of the images above it.
-
-### How to verify:
-Look for the `</div>` tag directly above where you pasted the About code. Ensure it is the closing tag for the Bento Grid. If you have two `</div>` tags at the very bottom of your main section, the About code should sit right between them.
-
-**Would you like me to provide the full "Cleaned Up" version of your entire HTML file so you can see exactly where every tag opens and closes?**
-
-    <div class="md:col-span-4 bg-royal-red min-h-[100px] md:min-h-full"></div>
-
-</div>
-
-    <div class="relative w-full h-full group">
-        <img src="Images/6.jpg" alt="Adult Content" class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-1000">
-        
-        <div class="absolute top-6 right-6">
-            <span class="text-[10px] bg-white text-black font-black px-4 py-2 uppercase tracking-widest shadow-2xl">
-                Adults Only
-            </span>
-        </div>
-        
-        <div class="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black/20 to-transparent"></div>
-    </div>
-
-</div>
     </main>
 
     <footer class="border-t border-gray-900 mt-12 py-12">
@@ -228,5 +209,3 @@ Look for the `</div>` tag directly above where you pasted the About code. Ensure
             </div>
         </div>
     </footer>
-</body>
-</html>
