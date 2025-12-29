@@ -41,9 +41,9 @@
         <button onclick="toggleStealth()" class="mt-10 text-blue-600 underline">Return to Dashboard</button>
     </div>
 
-    <nav class="w-full flex justify-between items-center py-6 px-8 border-b border-gray-900 bg-black/95 backdrop-blur-md sticky top-0 z-50">
+   <nav class="w-full flex justify-between items-center py-6 px-8 border-b border-gray-900 bg-black/95 backdrop-blur-md sticky top-0 z-50">
     <div class="flex items-center gap-3">
-        <button onclick="toggleMobileMenu()" class="md:hidden text-white text-xl mr-2 focus:outline-none">
+        <button onclick="toggleMobileMenu()" class="md:hidden text-white text-2xl mr-2 focus:outline-none">
             <i class="fas fa-bars"></i>
         </button>
         
@@ -65,6 +65,18 @@
         </button>
     </div>
 </nav>
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-[70] flex flex-col p-10 gap-8 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex justify-between items-center mb-10">
+        <span class="serif-font italic text-2xl text-royal-red">RS Menu</span>
+        <button onclick="toggleMobileMenu()" class="text-white text-4xl">&times;</button>
+    </div>
+    <nav class="flex flex-col gap-8">
+        <a href="#" onclick="toggleMobileMenu()" class="serif-font text-5xl border-b border-gray-900 pb-4">Home</a>
+        <a href="#" onclick="toggleMobileMenu()" class="serif-font text-5xl border-b border-gray-900 pb-4">Categories</a>
+        <a href="#" onclick="toggleMobileMenu()" class="serif-font text-5xl border-b border-gray-900 pb-4">Lessons</a>
+        <a href="#" onclick="toggleMobileMenu()" class="serif-font text-5xl border-b border-gray-900 pb-4">About</a>
+    </nav>
+</div>
     <main class="max-w-screen-2xl mx-auto p-4 lg:p-8 space-y-6">
         
         <div class="flex flex-wrap gap-4 justify-center py-2 text-[10px] uppercase tracking-widest text-gray-500 border-b border-gray-900">
@@ -200,10 +212,18 @@
     </footer>
 
     <script>
-        // JavaScript for Stealth Mode Toggle
-        function toggleStealth() {
-            document.body.classList.toggle('stealth-active');
-        }
-    </script>
+    // Requirement 9: Stealth Mode / Panic Exit
+    function toggleStealth() {
+        document.body.classList.toggle('stealth-active');
+        // Optional: If you want it to redirect to Google instead of just changing CSS
+        // window.location.href = "https://www.google.com"; 
+    }
+
+    // Requirement 2: Mobile Responsiveness Menu Toggle
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('-translate-x-full');
+    }
+</script>
 </body>
 </html>
