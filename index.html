@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROYAL SEDUCTION - Seduce Like A Pro</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
@@ -168,11 +169,15 @@
                         <span class="text-gray-500 font-medium lowercase">No spam . Just confidence.</span>
                     </h3>
                     <div class="flex flex-col sm:flex-row w-full max-w-sm gap-4">
-                        <input type="email" placeholder="enter your email" class="bg-white text-black px-4 py-2 rounded-lg text-sm w-full outline-none italic">
-                        <button class="text-royal-red font-black uppercase tracking-tighter text-sm hover:text-white transition">SUBSCRIBE</button>
-                    </div>
-                </div>
-            </div>
+                        <input>
+                        <div class="flex flex-col sm:flex-row w-full max-w-sm gap-4">
+    <input id="sub-email" type="email" placeholder="enter your email" class="bg-white text-black px-4 py-2 rounded-lg text-sm w-full outline-none italic" required>
+    
+    <button onclick="handleSubscription()" class="text-royal-red font-black uppercase tracking-tighter text-sm hover:text-white transition">
+        SUBSCRIBE
+    </button>
+</div>
+<p id="sub-message" class="text-[10px] mt-4 uppercase tracking-widest hidden text-white"></p>
         </div>
 
         <div class="fixed bottom-6 right-6 z-[60] bg-royal-red text-white p-4 shadow-2xl rounded-sm cursor-pointer hover:scale-105 transition hidden lg:block max-w-[200px] btn-glow">
@@ -222,6 +227,53 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('-translate-x-full');
+    }
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+    // Initialize Supabase with your project details
+    const SUPABASE_URL = 'https://dulbysxbquxhgguylwxa.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_NecuxVMASv3GIOdY6S3pyw_KOBNLfI5'; // This is your Anon Key
+    const supabase = dashboardsupabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function handleSubscription() {
+        const emailInput = document.getElementById('sub-email');
+        const messageDisplay = document.getElementById('sub-message');
+        const email = emailInput.value;
+
+        if (!email) {
+            alert("Please enter a valid email.");
+            return;
+        }
+
+        // Show loading state
+        if(messageDisplay) {
+            messageDisplay.classList.remove('hidden');
+            messageDisplay.innerText = "Processing your initiation...";
+        }
+
+        // Attempt to insert the user into your 'profiles' table
+        const { data, error } = await supabase
+            .from('profiles')
+            .insert([
+                { 
+                    email: email, 
+                    current_day: 1, 
+                    archetype: localStorage.getItem('userArchetype') || 'Unknown' 
+                }
+            ]);
+
+        if (error) {
+            console.error("Supabase Error:", error);
+            if (messageDisplay) messageDisplay.innerText = "You are already on the list.";
+        } else {
+            if (messageDisplay) {
+                messageDisplay.innerText = "Welcome. Check your email for Day 1.";
+                messageDisplay.style.color = "#D80000";
+            }
+            emailInput.value = ""; // Clear input
+        }
     }
 </script>
 </body>
