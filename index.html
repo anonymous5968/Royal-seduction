@@ -173,7 +173,16 @@
         <button id="save-all-btn" class="bg-royal-red text-white px-6 py-2 text-[10px] font-bold uppercase">Save Changes</button>
     </div>
 
-    <script type="module" src="./js/supabase-config.js"></script>
+    <script type="module">
+        import { loadSiteContent } from './supabase/config.js';
+        import { saveAllChanges } from './supabase/admin.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSiteContent();
+            const saveBtn = document.getElementById('save-all-btn');
+            if (saveBtn) saveBtn.addEventListener('click', saveAllChanges);
+        });
+    </script>
 
     <footer class="border-t border-gray-900 mt-12 py-12">
         <div class="max-w-screen-2xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
