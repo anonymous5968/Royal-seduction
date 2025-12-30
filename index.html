@@ -17,8 +17,6 @@
         .hover-zoom { transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
         .group:hover .hover-zoom { transform: scale(1.08); }
         html { scroll-behavior: smooth; }
-
-        /* Admin formatting styles */
         [contenteditable="true"] { outline: 1px dashed #D80000; }
     </style>
 </head>
@@ -30,15 +28,15 @@
             <span class="tracking-widest font-bold text-sm hidden sm:block">ROYAL SEDUCTION</span>
         </div>
         <div class="hidden md:flex gap-8 text-xs font-bold tracking-widest uppercase">
-            <a href="#" class="hover:text-royal-red transition">Home</a>
-            <a href="#" class="hover:text-royal-red transition">Categories</a>
-            <a href="#" class="hover:text-royal-red transition">Lessons</a>
-            <a href="#" class="hover:text-royal-red transition">About</a>
+            <a href="#home" class="hover:text-royal-red transition">Home</a>
+            <a href="#categories" class="hover:text-royal-red transition">Categories</a>
+            <a href="#forbidden-chapter" class="hover:text-royal-red transition">Lessons</a>
+            <a href="#about" class="hover:text-royal-red transition">About</a>
         </div>
         <div class="flex gap-6 text-sm">
             <i class="fab fa-instagram cursor-pointer hover:text-royal-red transition"></i>
             <i class="fas fa-search cursor-pointer hover:text-royal-red transition"></i>
-            <button title="Stealth Mode" class="hover:text-gray-400 transition">
+            <button title="Stealth Mode" onclick="location.href='https://google.com'" class="hover:text-gray-400 transition">
                 <i class="fas fa-eye-slash"></i>
             </button>
         </div>
@@ -46,7 +44,7 @@
 
     <main class="max-w-screen-2xl mx-auto p-4 lg:p-8 space-y-6">
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div id="home" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div class="bg-white text-black p-8 lg:p-20 flex flex-col justify-between relative overflow-hidden min-h-[500px]">
                 <div>
                     <h1 data-key="hero-h1" class="text-5xl lg:text-8xl leading-[0.9] mb-8 uppercase">
@@ -128,13 +126,13 @@
             </div>
         </div>
 
-        <div class="lg:col-span-12 bg-royal-red grid grid-cols-1 lg:grid-cols-2 border border-gray-900 overflow-hidden">
+        <div id="forbidden-chapter" class="lg:col-span-12 bg-royal-red grid grid-cols-1 lg:grid-cols-2 border border-gray-900 overflow-hidden">
             <div class="flex flex-col justify-center p-8 lg:p-16">
                 <h4 data-key="forbid-h4" class="serif-font text-4xl lg:text-5xl mb-3 italic text-white uppercase tracking-tighter">The Forbidden <br> Chapter</h4>
                 <div class="w-12 h-[2px] bg-white mb-4"></div> 
                 <p data-key="forbid-p" class="text-white/70 text-[10px] uppercase tracking-[0.3em] font-bold">Exclusive Membership Required</p>
             </div>
-            <div class="relative h-[300px] lg:h-[400px] group bg-black flex items-center justify-center">
+            <div class="relative h-[300px] lg:h-[400px] bg-black flex items-center justify-center group overflow-hidden">
                 <img src="Images/4.jpg" class="w-full h-full object-contain opacity-90 group-hover:scale-110 transition-transform duration-1000">
                 <div class="absolute top-8 right-8 flex flex-col items-end">
                     <span class="serif-font italic text-white text-lg lowercase leading-none">Adults only</span>
