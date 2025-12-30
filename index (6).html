@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL SEDUCTION - Seduce Like A Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+        
+        /* Requirement: Deep red, charcoal black palette [cite: 7, 119] */
+        body { background-color: #050505; color: #ffffff; font-family: 'Lato', sans-serif; transition: background 0.3s; }
+        
+        /* Requirement: Serif for headlines, Sans for body [cite: 10, 117] */
+        h1, h2, h3, h4, .serif-font { font-family: 'Playfair Display', serif; }
+        
+        .bg-royal-red { background-color: #D80000; }
+        .text-royal-red { color: #D80000; }
+        .border-royal-red { border-color: #D80000; }
+        
+        /* Requirement: Soft fade-ins and hover glows [cite: 117] */
+        .hover-zoom { transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .group:hover .hover-zoom { transform: scale(1.08); }
+        .btn-glow:hover { box-shadow: 0 0 15px rgba(216, 0, 0, 0.6); }
+        
+        html { scroll-behavior: smooth; }
+
+        /* Requirement: Stealth Mode / Panic Exit [cite: 105, 106] */
+        .stealth-active { background-color: white !important; color: black !important; }
+        .stealth-active main, .stealth-active nav, .stealth-active footer { display: none; }
+        #stealth-placeholder { display: none; }
+        .stealth-active #stealth-placeholder { display: block; padding: 50px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div id="stealth-placeholder" class="text-black bg-white min-h-screen">
+        <h1 class="text-2xl font-serif mb-4">Market Report: 2025 Global Trends</h1>
+        <p>Analyzing the shift in consumer behavior and digital asset management across the EMEA region...</p>
+        <button onclick="toggleStealth()" class="mt-10 text-blue-600 underline">Return to Dashboard</button>
+    </div>
+
+   <nav class="w-full flex justify-between items-center py-6 px-8 border-b border-gray-900 bg-black/95 backdrop-blur-md sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+        <button onclick="toggleMobileMenu()" class="md:hidden text-white text-2xl mr-2 focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="w-10 h-10 border border-white rounded-full flex items-center justify-center serif-font font-bold text-lg">RS</div>
+        <span class="tracking-widest font-bold text-sm hidden sm:block">ROYAL SEDUCTION</span>
+    </div>
+
+    <div class="hidden md:flex gap-8 text-xs font-bold tracking-widest uppercase">
+    <a href="#home" class="hover:text-royal-red transition">Home</a>
+    <a href="#categories" class="hover:text-royal-red transition">Categories</a>
+    <a href="#home" class="hover:text-royal-red transition">Lessons</a> 
+    <a href="#about" class="hover:text-royal-red transition">About</a>
+</div>
+    <div class="flex gap-6 text-sm items-center">
+        <i class="fab fa-instagram cursor-pointer hover:text-royal-red transition"></i>
+        <button onclick="toggleStealth()" title="Stealth Mode" class="bg-gray-900 p-2 rounded-full hover:text-royal-red transition">
+            <i class="fas fa-eye-slash"></i>
+        </button>
+    </div>
+</nav>
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-[70] flex flex-col p-10 gap-8 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex justify-between items-center mb-10">
+        <span class="serif-font italic text-2xl text-royal-red">RS Menu</span>
+        <button onclick="toggleMobileMenu()" class="text-white text-4xl">&times;</button>
+    </div>
+   <nav class="flex flex-col gap-4">
+    <a href="#home" onclick="toggleMobileMenu()" class="serif-font text-2xl border-b border-gray-900 pb-3">Home</a>
+    <a href="#categories" onclick="toggleMobileMenu()" class="serif-font text-2xl border-b border-gray-900 pb-3">Categories</a>
+    <a href="#home" onclick="toggleMobileMenu()" class="serif-font text-2xl border-b border-gray-900 pb-3">Lessons</a>
+    <a href="#about" onclick="toggleMobileMenu()" class="serif-font text-2xl border-b border-gray-900 pb-3">About</a>
+</nav>
+</div>
+    <main  class="max-w-screen-2xl mx-auto p-4 lg:p-8 space-y-6">
+        
+        <div class="flex flex-wrap gap-4 justify-center py-2 text-[10px] uppercase tracking-widest text-gray-500 border-b border-gray-900">
+            <span>Filter by mood:</span>
+            <button class="hover:text-white transition">I need confidence</button>
+            <button class="hover:text-white transition">I want to seduce</button>
+            <button class="hover:text-white transition">I'm feeling lonely</button>
+        </div>
+
+        <div  id="home" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="bg-white text-black p-8 lg:p-20 flex flex-col justify-between relative overflow-hidden min-h-[500px]">
+                <div>
+                    <h1 class="text-5xl lg:text-8xl leading-[0.9] mb-8 uppercase">
+                        SEDUCE <br> LIKE <br> <span class="serif-font italic text-royal-red">A PRO</span>
+                    </h1>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-2">Day 3 of your Seduction Journey</p>
+                    <p class="text-royal-red font-bold uppercase tracking-wider text-xs lg:text-sm max-w-xs leading-relaxed">
+                        Unlock irresistible charm, magnetic presence and deep psychological connection.
+                    </p>
+                </div>
+                <div class="bg-black text-white p-6 lg:p-8 mt-12 max-w-md shadow-2xl relative z-10 border-l-4 border-royal-red">
+                    <p class="text-gray-300 text-sm italic mb-4">"Silence isn't awkward. It is powerful..."</p>
+                    <a href="#" class="text-[10px] font-bold border-b border-royal-red pb-1 uppercase hover:text-royal-red transition tracking-tighter">Read The Full Lesson</a>
+                </div>
+            </div>
+
+            <div class="relative bg-royal-red flex flex-col items-center justify-center p-6 lg:p-12 min-h-[500px]">
+                <div class="relative w-full max-w-md aspect-[4/5] overflow-hidden shadow-2xl mb-8 group">
+                    <img src="Images/1.jpg" alt="Seductive Hero" class="w-full h-full object-cover mix-blend-multiply opacity-90 hover-zoom">
+                    <div class="absolute bottom-6 right-6">
+                        <button class="bg-white text-black px-6 py-4 text-[10px] font-bold uppercase tracking-widest shadow-xl flex items-center gap-3 hover:bg-black hover:text-white transition btn-glow">
+                            Begin Your Journey <i class="fas fa-arrow-right text-[8px]"></i>
+                        </button>
+                    </div>
+                </div>
+                <a href="#" onclick="alert('Quiz Starting: Are you a Romantic, Charmer, or Tease?')" class="group flex items-center gap-4 text-white hover:opacity-80 transition-opacity">
+                    <p class="text-xs md:text-sm tracking-tight leading-none">
+                        Not sure where to start...? <span class="font-bold uppercase italic">Take the Seduction Personality Quiz</span>
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-4 h-[2px] bg-white group-hover:w-6 transition-all"></div>
+                        <i class="fas fa-caret-right text-xl -ml-1"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="categories" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4">
+            <div class="lg:col-span-4 bg-royal-red p-8 lg:p-10 flex flex-col justify-between text-white min-h-[400px]">
+                <h3 class="text-2xl font-black uppercase tracking-tighter inline-block border-b-4 border-white pb-2 mb-10 self-start">CATEGORY PREVIEW</h3>
+                <ul class="space-y-6">
+                    <li class="flex items-center gap-4 group cursor-pointer">
+                        <i class="fas fa-link opacity-70"></i>
+                        <span class="text-xl font-light tracking-wide group-hover:translate-x-2 transition-transform uppercase">Seduction</span>
+                    </li>
+                    <li class="flex items-center gap-4 group cursor-pointer">
+                        <i class="fas fa-brain opacity-70"></i>
+                        <span class="text-xl font-light tracking-wide group-hover:translate-x-2 transition-transform uppercase">Psychology</span>
+                    </li>
+                    <li class="flex items-center gap-4 group cursor-pointer">
+                        <i class="fas fa-droplet opacity-70"></i>
+                        <span class="text-xl font-light tracking-wide group-hover:translate-x-2 transition-transform uppercase">Body Language</span>
+                    </li>
+                    <li class="flex items-center gap-4 group cursor-pointer">
+                        <i class="fas fa-link opacity-70"></i>
+                        <span class="text-xl font-light tracking-wide group-hover:translate-x-2 transition-transform uppercase">relationships</span>
+                    </li>
+                    <li class="flex items-center gap-4 group cursor-pointer">
+                        <i class="fas fa-link opacity-70"></i>
+                        <span class="text-xl font-light tracking-wide group-hover:translate-x-2 transition-transform uppercase">emotional intelligence</span>
+                    </li>
+                </ul>
+                <p class="text-[10px] uppercase tracking-[0.3em] opacity-60">Curated Intelligence &copy; 2025</p>
+            </div>
+
+            <div class="lg:col-span-3 h-[400px] lg:h-auto relative border border-gray-900 overflow-hidden group">
+                <img src="Images/3.jpg" class="w-full h-full object-cover hover-zoom opacity-80">
+            </div>
+
+            <div class="lg:col-span-5 bg-black border border-gray-800 flex flex-col overflow-hidden group">
+                <div class="relative w-full">
+                    <img src="Images/5.jpg" class="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute -bottom-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-royal-red rounded-full flex items-center justify-center text-xl shadow-xl z-20">
+                        <i class="fas fa-envelope-open-text text-white"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center text-center p-8 pt-16 bg-black">
+                    <h3 class="text-white text-xl md:text-2xl font-bold uppercase tracking-tighter leading-tight mb-8">
+                        Get seduction tips <br> straight to your inbox. <br> 
+                        <span class="text-gray-500 font-medium lowercase">No spam . Just confidence.</span>
+                    </h3>
+                    <div class="flex flex-col sm:flex-row w-full max-w-sm gap-4">
+                        <input>
+                        <div class="flex flex-col sm:flex-row w-full max-w-sm gap-4">
+    <input id="sub-email" type="email" placeholder="enter your email" class="bg-white text-black px-4 py-2 rounded-lg text-sm w-full outline-none italic" required>
+    
+    <button onclick="handleSubscription()" class="text-royal-red font-black uppercase tracking-tighter text-sm hover:text-white transition">
+        SUBSCRIBE
+    </button>
+</div>
+<p id="sub-message" class="text-[10px] mt-4 uppercase tracking-widest hidden text-white"></p>
+        </div>
+
+        <div class="fixed bottom-6 right-6 z-[60] bg-royal-red text-white p-4 shadow-2xl rounded-sm cursor-pointer hover:scale-105 transition hidden lg:block max-w-[200px] btn-glow">
+            <p class="text-[8px] uppercase font-bold tracking-widest mb-1">New Lesson</p>
+            <p class="text-xs serif-font italic leading-tight">The Art of Mystery: Click to Read</p>
+        </div>
+        
+        <div id="about" class="grid grid-cols-1 lg:grid-cols-12 border border-gray-900 overflow-hidden bg-black">
+            <div class="lg:col-span-7 p-8 lg:p-16 flex flex-col justify-center order-2 lg:order-1">
+                <h2 class="serif-font italic text-white text-3xl md:text-5xl lowercase tracking-tighter border-b border-royal-red inline-block mb-10 self-start pb-2">About Royal Seduction</h2>
+                <div class="space-y-6 max-w-xl">
+                    <p class="text-gray-400 text-[10px] md:text-xs leading-relaxed tracking-[0.3em] uppercase">
+                        Royal Seduction is where psychology meets passion. We teach the art of attraction, not through tricks but through confidence, emotional intelligence and presence. [cite: 20]
+                    </p>
+                    <p class="serif-font text-white italic text-xl md:text-2xl pt-6 border-t border-gray-900 leading-tight">
+                        This is seduction — redefined with elegance, purpose and respect.
+                    </p>
+                </div>
+            </div>
+            <div class="lg:col-span-5 h-[300px] lg:h-auto relative order-1 lg:order-2 overflow-hidden group">
+                <img src="Images/6.jpg" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-all duration-[3s]">
+                <div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black to-transparent hidden lg:block"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-gray-900 mt-12 py-12">
+        <div class="max-w-screen-2xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-600 text-[10px] uppercase tracking-[0.5em]">&copy; 2025 Royal Seduction. [cite: 36] All Rights Reserved.</div>
+            <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms</a>
+                <a href="#" class="hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Requirement 9: Stealth Mode / Panic Exit
+    function toggleStealth() {
+        document.body.classList.toggle('stealth-active');
+        // Optional: If you want it to redirect to Google instead of just changing CSS
+        // window.location.href = "https://www.google.com"; 
+    }
+
+    // Requirement 2: Mobile Responsiveness Menu Toggle
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('-translate-x-full');
+    }
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+    // Initialize Supabase with your project details
+    const SUPABASE_URL = 'https://dulbysxbquxhgguylwxa.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_NecuxVMASv3GIOdY6S3pyw_KOBNLfI5'; // This is your Anon Key
+    const supabase = dashboardsupabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function handleSubscription() {
+        const emailInput = document.getElementById('sub-email');
+        const messageDisplay = document.getElementById('sub-message');
+        const email = emailInput.value;
+
+        if (!email) {
+            alert("Please enter a valid email.");
+            return;
+        }
+
+        // Show loading state
+        if(messageDisplay) {
+            messageDisplay.classList.remove('hidden');
+            messageDisplay.innerText = "Processing your initiation...";
+        }
+
+        // Attempt to insert the user into your 'profiles' table
+        const { data, error } = await supabase
+            .from('profiles')
+            .insert([
+                { 
+                    email: email, 
+                    current_day: 1, 
+                    archetype: localStorage.getItem('userArchetype') || 'Unknown' 
+                }
+            ]);
+
+        if (error) {
+            console.error("Supabase Error:", error);
+            if (messageDisplay) messageDisplay.innerText = "You are already on the list.";
+        } else {
+            if (messageDisplay) {
+                messageDisplay.innerText = "Welcome. Check your email for Day 1.";
+                messageDisplay.style.color = "#D80000";
+            }
+            emailInput.value = ""; // Clear input
+        }
+    }
+</script>
+</body>
+</html>
