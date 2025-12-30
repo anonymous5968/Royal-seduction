@@ -17,8 +17,9 @@
         .hover-zoom { transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
         .group:hover .hover-zoom { transform: scale(1.08); }
         html { scroll-behavior: smooth; }
-        /* Admin Edit Styles */
-        [contenteditable="true"] { outline: 1px dashed #D80000; padding: 2px; cursor: text; }
+
+        /* Admin formatting styles */
+        [contenteditable="true"] { outline: 1px dashed #D80000; }
     </style>
 </head>
 <body class="antialiased">
@@ -36,93 +37,156 @@
         </div>
         <div class="flex gap-6 text-sm">
             <i class="fab fa-instagram cursor-pointer hover:text-royal-red transition"></i>
-            <button title="Stealth Mode" class="hover:text-gray-400 transition"><i class="fas fa-eye-slash"></i></button>
+            <i class="fas fa-search cursor-pointer hover:text-royal-red transition"></i>
+            <button title="Stealth Mode" class="hover:text-gray-400 transition">
+                <i class="fas fa-eye-slash"></i>
+            </button>
         </div>
     </nav>
 
     <main class="max-w-screen-2xl mx-auto p-4 lg:p-8 space-y-6">
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div class="bg-white text-black p-8 lg:p-20 flex flex-col justify-between min-h-[500px]">
+            <div class="bg-white text-black p-8 lg:p-20 flex flex-col justify-between relative overflow-hidden min-h-[500px]">
                 <div>
-                    <h1 data-key="hero_title" class="text-5xl lg:text-8xl leading-[0.9] mb-8 uppercase">SEDUCE <br> LIKE <br> <span class="serif-font italic text-royal-red">A PRO</span></h1>
-                    <p data-key="hero_sub" class="text-royal-red font-bold uppercase tracking-wider text-xs lg:text-sm max-w-xs leading-relaxed">Unlock irresistible charm, magnetic presence and deep psychological connection.</p>
+                    <h1 data-key="hero-h1" class="text-5xl lg:text-8xl leading-[0.9] mb-8 uppercase">
+                        SEDUCE <br> LIKE <br> <span class="serif-font italic text-royal-red">A PRO</span>
+                    </h1>
+                    <p data-key="hero-p" class="text-royal-red font-bold uppercase tracking-wider text-xs lg:text-sm max-w-xs leading-relaxed">
+                        Unlock irresistible charm, magnetic presence and deep psychological connection.
+                    </p>
                 </div>
-                <div class="bg-black text-white p-6 lg:p-8 mt-12 max-w-md border-l-4 border-royal-red">
-                    <p data-key="hero_quote" class="text-gray-300 text-sm italic mb-4">"Silence isn't awkward. It is powerful..."</p>
+                <div class="bg-black text-white p-6 lg:p-8 mt-12 max-w-md shadow-2xl relative z-10 border-l-4 border-royal-red">
+                    <p data-key="hero-quote" class="text-gray-300 text-sm italic mb-4">"Silence isn't awkward. It is powerful..."</p>
                     <a href="#" class="text-[10px] font-bold border-b border-royal-red pb-1 uppercase hover:text-royal-red transition tracking-tighter">Read The Full Lesson</a>
                 </div>
             </div>
+
             <div class="relative bg-royal-red flex flex-col items-center justify-center p-6 lg:p-12 min-h-[500px]">
-                <div class="relative w-full max-w-md aspect-[4/5] overflow-hidden shadow-2xl mb-8 group bg-black">
-                    <img src="Images/1.jpg" class="w-full h-full object-cover mix-blend-multiply opacity-90 hover-zoom">
+                <div class="relative w-full max-w-md aspect-[4/5] overflow-hidden shadow-2xl mb-8 group">
+                    <img src="Images/1.jpg" alt="Seductive Hero" class="w-full h-full object-cover mix-blend-multiply opacity-90 hover-zoom">
                     <div class="absolute bottom-6 right-6">
-                        <button class="bg-white text-black px-6 py-3 text-[10px] font-bold uppercase tracking-widest shadow-xl flex items-center gap-3">Begin Your Journey <i class="fas fa-arrow-right"></i></button>
+                        <button class="bg-white text-black px-6 py-3 text-[10px] font-bold uppercase tracking-widest shadow-xl flex items-center gap-3 hover:bg-black hover:text-white transition">
+                            Begin Your Journey <i class="fas fa-arrow-right text-[8px]"></i>
+                        </button>
                     </div>
                 </div>
+                <a href="#" class="group flex items-center gap-4 text-white hover:opacity-80 transition-opacity">
+                    <p data-key="quiz-text" class="text-xs md:text-sm tracking-tight leading-none">
+                        Not sure where to start...? <span class="font-bold uppercase italic">Take the Quiz</span>
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-4 h-[2px] bg-white group-hover:w-6 transition-all"></div>
+                        <i class="fas fa-caret-right text-xl -ml-1"></i>
+                    </div>
+                </a>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4">
+        <div id="categories" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4">
             <div class="lg:col-span-4 bg-royal-red p-8 lg:p-10 flex flex-col justify-between text-white min-h-[400px]">
-                <h3 data-key="cat_title" class="text-2xl font-black uppercase tracking-tighter inline-block border-b-4 border-white pb-2 mb-10 self-start">CATEGORY PREVIEW</h3>
+                <h3 data-key="cat-header" class="text-2xl font-black uppercase tracking-tighter inline-block border-b-4 border-white pb-2 mb-10 self-start">CATEGORY PREVIEW</h3>
                 <ul class="space-y-6">
-                    <li class="flex items-center gap-4 group cursor-pointer"><i class="fas fa-link opacity-70"></i><span data-key="cat_1" class="text-xl font-light tracking-wide group-hover:translate-x-2 transition-transform uppercase">Seduction</span></li>
-                    <li class="flex items-center gap-4 group cursor-pointer"><i class="fas fa-brain opacity-70"></i><span data-key="cat_2" class="text-xl font-light tracking-wide group-hover:translate-x-2 transition-transform uppercase">Psychology</span></li>
+                    <li class="flex items-center gap-4 group cursor-pointer">
+                        <i class="fas fa-link opacity-70"></i>
+                        <span data-key="cat-1" class="text-xl font-light tracking-wide group-hover:translate-x-2 transition-transform uppercase">Seduction</span>
+                    </li>
+                    <li class="flex items-center gap-4 group cursor-pointer">
+                        <i class="fas fa-brain opacity-70"></i>
+                        <span data-key="cat-2" class="text-xl font-light tracking-wide group-hover:translate-x-2 transition-transform uppercase">Psychology</span>
+                    </li>
+                    <li class="flex items-center gap-4 group cursor-pointer">
+                        <i class="fas fa-droplet opacity-70"></i>
+                        <span data-key="cat-3" class="text-xl font-light tracking-wide group-hover:translate-x-2 transition-transform uppercase">Body Language</span>
+                    </li>
                 </ul>
                 <p class="text-[10px] uppercase tracking-[0.3em] opacity-60">Curated Intelligence &copy; 2025</p>
             </div>
-            <div class="lg:col-span-3 h-[400px] lg:h-auto border border-gray-900 overflow-hidden"><img src="Images/3.jpg" class="w-full h-full object-cover opacity-80"></div>
-            <div class="lg:col-span-5 bg-black border border-gray-800 flex flex-col overflow-hidden">
-                <img src="Images/5.jpg" class="w-full h-auto opacity-80">
-                <div class="flex flex-col items-center text-center p-8 bg-black">
-                    <h3 data-key="newsletter_text" class="text-white text-xl md:text-2xl font-bold uppercase tracking-tighter mb-8">Get seduction tips straight to your inbox.</h3>
+
+            <div class="lg:col-span-3 h-[400px] lg:h-auto relative border border-gray-900 overflow-hidden group">
+                <img src="Images/3.jpg" class="w-full h-full object-cover hover-zoom opacity-80">
+            </div>
+
+            <div class="lg:col-span-5 bg-black border border-gray-800 flex flex-col overflow-hidden group">
+                <div class="relative w-full">
+                    <img src="Images/5.jpg" class="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute -bottom-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-royal-red rounded-full flex items-center justify-center text-xl shadow-xl z-20">
+                        <i class="fas fa-envelope-open-text text-white"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center text-center p-8 pt-16 bg-black">
+                    <h3 data-key="sub-h3" class="text-white text-xl md:text-2xl font-bold uppercase tracking-tighter leading-tight mb-8">
+                        Get seduction tips <br> straight to your inbox. <br> 
+                        <span class="text-gray-500 font-medium lowercase">No spam .</span> <br>
+                        Just confidence
+                    </h3>
+                    <div class="flex flex-col sm:flex-row w-full max-w-sm gap-4">
+                        <input type="email" placeholder="enter your email" class="bg-white text-black px-4 py-2 rounded-lg text-sm w-full outline-none italic">
+                        <button class="text-royal-red font-black uppercase tracking-tighter text-sm hover:text-white transition">SUBSCRIBE</button>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="lg:col-span-12 bg-royal-red grid grid-cols-1 lg:grid-cols-2 border border-gray-900 overflow-hidden">
             <div class="flex flex-col justify-center p-8 lg:p-16">
-                <h4 data-key="forbidden_title" class="serif-font text-4xl lg:text-5xl mb-3 italic text-white uppercase tracking-tighter">The Forbidden <br> Chapter</h4>
+                <h4 data-key="forbid-h4" class="serif-font text-4xl lg:text-5xl mb-3 italic text-white uppercase tracking-tighter">The Forbidden <br> Chapter</h4>
                 <div class="w-12 h-[2px] bg-white mb-4"></div> 
-                <p data-key="forbidden_sub" class="text-white/70 text-[10px] uppercase tracking-[0.3em] font-bold">Exclusive Membership Required</p>
+                <p data-key="forbid-p" class="text-white/70 text-[10px] uppercase tracking-[0.3em] font-bold">Exclusive Membership Required</p>
             </div>
-            <div class="relative h-[300px] lg:h-[400px] bg-black flex items-center justify-center">
-                <img src="Images/4.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000">
+            <div class="relative h-[300px] lg:h-[400px] group bg-black flex items-center justify-center">
+                <img src="Images/4.jpg" class="w-full h-full object-contain opacity-90 group-hover:scale-110 transition-transform duration-1000">
                 <div class="absolute top-8 right-8 flex flex-col items-end">
-                    <span class="serif-font italic text-white text-lg lowercase">Adults only</span>
-                    <div class="w-12 h-[1px] bg-royal-red mt-1"></div>
+                    <span class="serif-font italic text-white text-lg lowercase leading-none">Adults only</span>
+                    <div class="w-12 h-[1px] bg-royal-red mt-1 shadow-[0_0_8px_#D80000]"></div>
                 </div>
             </div>
         </div>
 
         <div id="about" class="grid grid-cols-1 lg:grid-cols-12 border border-gray-900 overflow-hidden bg-black">
             <div class="lg:col-span-7 p-8 lg:p-16 flex flex-col justify-center order-2 lg:order-1">
-                <h2 data-key="about_title" class="serif-font italic text-white text-3xl md:text-5xl lowercase tracking-tighter border-b border-royal-red inline-block mb-10 self-start pb-2">About Royal Seduction</h2>
+                <h2 data-key="about-h2" class="serif-font italic text-white text-3xl md:text-5xl lowercase tracking-tighter border-b border-royal-red inline-block mb-10 self-start pb-2">About Royal Seduction</h2>
                 <div class="space-y-6 max-w-xl">
-                    <p data-key="about_p1" class="text-gray-400 text-[10px] md:text-xs leading-relaxed tracking-[0.3em] uppercase">Royal Seduction is where psychology meets passion...</p>
-                    <p data-key="about_p2" class="serif-font text-white italic text-xl md:text-2xl pt-6 border-t border-gray-900 leading-tight">This is seduction — redefined with elegance.</p>
+                    <p data-key="about-p1" class="text-gray-400 text-[10px] md:text-xs leading-relaxed tracking-[0.3em] uppercase">
+                        Royal Seduction is where psychology meets passion. We teach the art of attraction, not through tricks but through confidence, emotional intelligence and presence.
+                    </p>
+                    <p data-key="about-p2" class="serif-font text-white italic text-xl md:text-2xl pt-6 border-t border-gray-900 leading-tight">
+                        This is seduction — redefined with elegance, purpose and respect.
+                    </p>
                 </div>
             </div>
-            <div class="lg:col-span-5 h-[300px] bg-black flex items-center justify-center order-1 lg:order-2 overflow-hidden">
-                <img src="Images/6.jpg" class="w-full h-full object-contain opacity-80">
+            <div class="lg:col-span-5 h-[300px] lg:h-auto relative order-1 lg:order-2 overflow-hidden group">
+                <img src="Images/6.jpg" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-all duration-[3s]">
+                <div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black to-transparent hidden lg:block"></div>
             </div>
         </div>
 
     </main>
 
-    <div id="admin-toolbar" class="hidden fixed bottom-0 left-0 w-full bg-black border-t-2 border-royal-red p-4 z-[100] flex justify-between items-center">
+    <div id="admin-controls" class="hidden fixed bottom-0 left-0 w-full bg-black border-t border-royal-red p-4 z-[100] flex justify-between items-center">
         <div class="flex gap-4">
-            <button onclick="document.execCommand('bold',false,null)" class="text-white px-2"><b>B</b></button>
-            <button onclick="document.execCommand('italic',false,null)" class="text-white px-2"><i>I</i></button>
-            <select onchange="document.execCommand('fontName', false, this.value)" class="bg-gray-800 text-white text-xs p-1">
+            <button onclick="document.execCommand('bold',false,null)" class="text-white px-3 border border-gray-800">B</button>
+            <button onclick="document.execCommand('italic',false,null)" class="text-white px-3 border border-gray-800">I</button>
+            <select onchange="document.execCommand('fontName', false, this.value)" class="bg-black text-white text-xs">
                 <option value="Lato">Sans</option>
                 <option value="Playfair Display">Serif</option>
             </select>
         </div>
-        <button id="save-btn" class="bg-royal-red text-white px-6 py-2 text-[10px] font-bold uppercase">Save All Changes</button>
+        <button id="save-all-btn" class="bg-royal-red text-white px-6 py-2 text-[10px] font-bold uppercase">Save Changes</button>
     </div>
 
     <script type="module" src="./js/supabase-config.js"></script>
+
+    <footer class="border-t border-gray-900 mt-12 py-12">
+        <div class="max-w-screen-2xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-600 text-[10px] uppercase tracking-[0.5em]">&copy; 2025 Royal Seduction. All Rights Reserved.</div>
+            <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms</a>
+                <a href="#" class="hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
