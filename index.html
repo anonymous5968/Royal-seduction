@@ -162,16 +162,14 @@
     </main>
 
     <div id="admin-controls" class="hidden fixed bottom-0 left-0 w-full bg-black border-t border-royal-red p-4 z-[100] flex justify-between items-center">
-        <div class="flex gap-4">
-            <button onclick="document.execCommand('bold',false,null)" class="text-white px-3 border border-gray-800">B</button>
-            <button onclick="document.execCommand('italic',false,null)" class="text-white px-3 border border-gray-800">I</button>
-            <select onchange="document.execCommand('fontName', false, this.value)" class="bg-black text-white text-xs">
-                <option value="Lato">Sans</option>
-                <option value="Playfair Display">Serif</option>
-            </select>
-        </div>
-        <button id="save-all-btn" class="bg-royal-red text-white px-6 py-2 text-[10px] font-bold uppercase">Save Changes</button>
+    <div class="flex gap-4">
+        <button onclick="document.execCommand('bold',false,null)" class="text-white px-3 border border-gray-800">B</button>
+        <button onclick="document.execCommand('italic',false,null)" class="text-white px-3 border border-gray-800">I</button>
+        
+        <button id="add-lesson-btn" class="bg-white text-black px-4 py-1 text-[10px] font-bold uppercase ml-4">+ Add Lesson</button>
     </div>
+    <button id="save-all-btn" class="bg-royal-red text-white px-6 py-2 text-[10px] font-bold uppercase">Save Changes</button>
+</div>
 
     <script type="module">
         import { loadSiteContent } from './supabase/config.js';
